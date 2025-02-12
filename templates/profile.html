@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='new.css') }}">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='review.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='ABOUTSTYLE.css')}}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+  *{
+    gap: 5px;
+  }
+ 
+  .form-container {
+    max-width: 330px;
+        padding: 20px;
+        margin: auto; 
+        height: 250px;
+        max-height: 700px;
+    height: 40%;
+    background-color:aliceblue;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(187, 255, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #4d4d62;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+  <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const username = urlParams.get('username');
+
+  if (username) {
+    document.getElementById('profile-info').innerHTML = <p>Welcome, ${username}!</p>;
+  } else {
+    document.getElementById('profile-info').innerHTML = "<p>Error: No user logged in.</p>";
+  }
+</script>
+<body >
+  
+  <div class="profile-container">
+    <header>
+      <h1><b> MEDITRUST PHARMA </b></h1>
+      <p>Welcome To Meditrust_Pharma</p>
+    </header>
+    <nav>
+      <a id="cart-button" href="/profile">Home</a>
+      
+      <a id="cart-button" href="/realcategory">Categories</a>
+    <a id="cart-button" href="/">Logout</a>
+    </nav>
+    <div id="profile-info">
+      <Marquee style="font-family: cursive; text-decoration: wavy;font-size:large; color: cadetblue;">
+        <u>
+          <h3>Delivery just in 15 Mins..</h3>
+        </u>
+      </Marquee>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide" >
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://www.dvago.pk/_next/image?url=https%3A%2F%2Fdvago-assets.s3.ap-southeast-1.amazonaws.com%2FWeb%2520Banner%2Fbank-discounts-web.jpg&w=1600&q=50 "
+            width="100%">
+          <div class="carousel-caption d-none d-md-block">
+            <h5></h5>
+            <p></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://www.dvago.pk/_next/image?url=https%3A%2F%2Fdvago-assets.s3.ap-southeast-1.amazonaws.com%2FWeb%2520Banner%2Fbabies-pamper-banner-Change.jpg&w=1600&q=50"
+            width="100%">
+          <div class="carousel-caption d-none d-md-block">
+            <!-- <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p> -->
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://www.dvago.pk/_next/image?url=https%3A%2F%2Fdvago-assets.s3.ap-southeast-1.amazonaws.com%2FWeb%2520Banner%2Ffree-delivery-web.jpg&w=1600&q=50"
+            width="100%">
+          <div class="carousel-caption d-none d-md-block">
+            <!-- <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p> -->
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div style="text-align: center">
+      <!-- <img src="{{ url_for('static', filename='COLOURBOX56650701.webp')}}" alt="Centered Image"> -->
+
+
+      <section class="categories-section" >
+        <u>
+          <h3 style="text-align: center; background-color: #e8f8f5;">Explore By Categories</h3>
+        </u>
+        <div class="categories-grid" style=" background-color: #e8f8f5;">
+          <!-- Category cards -->
+          <div class="category-card" style=" background-color: #e8f8f5;">
+            <img src="{{ url_for('static', filename='featuredd.jpg')}}" alt="Featured Medicine">
+            <h4 class="category-title" style=" background-color: #e8f8f5;"><a href="/realfeature">Featured Medicines</a></h4>
+          </div>
+          <div class="category-card" style=" background-color: #e8f8f5;">
+            <img src="{{ url_for('static', filename='counter.png')}}" alt="Over the Counter Medicines">
+            <h4 class="category-title" style=" background-color: #e8f8f5;"><a href="/realcounter">The Counter Medicines</h4></a>
+          </div>
+          <div class="category-card" style=" background-color: #e8f8f5;">
+            <img src="{{ url_for('static', filename='familycare.png')}}" alt="Family Care">
+            <h4 class="category-title" style=" background-color: #e8f8f5;"><a href="/realfamily">Family Care</h4></a>
+          </div>
+          <div class="category-card" style=" background-color: #e8f8f5;">
+            <img src="{{ url_for('static', filename='herbal.png')}}" alt="Herbal Items">
+            <h4 class="category-title" style=" background-color: #e8f8f5;"><a href="/realherbal">Herbal Items</h4></a>
+          </div>
+          <div class="category-card" style=" background-color: #e8f8f5;">
+            <img src="{{ url_for('static', filename='household.png')}}" alt="Household Items">
+            <h4 class="category-title" style=" background-color: #e8f8f5;"><a href="/realhouse">Household Items</h4></a>
+          </div>
+          <div class="category-card" style=" background-color: #e8f8f5;">
+            <img src="{{ url_for('static', filename='injections.jpeg')}}" alt="Devices and Injectables">
+            <h4 class="category-title" style=" background-color: #e8f8f5;"><a href="/realdevice">Devices and Injectables</h4></a>
+          </div>
+          <div class="category-card"style=" background-color: #e8f8f5;">
+            <img src="https://giftpoint.com.pk/cdn/shop/files/Oxy_Glow_Gold_Beauty_Cream.png?v=1723882776"
+              alt="wellness and beauty">
+            <h4 class="category-title" style=" background-color: #e8f8f5;"><a href="/realbeauty">Wellness and Beauty</h4></a>
+          </div>
+        </div>
+         </section>
+      <div>
+        <h2 style="padding: 30px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><u>For Any Complain Fill
+            The Form</u></h2>
+      </div>
+      <div style="gap: 10px;">
+        <div class="form-container" >
+
+          <h2>Get in Touch</h2>
+          <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+          <form action="https://api.web3forms.com/submit" method="post">
+            <input type="hidden" name="access_key" value="e9490dd7-bdad-4aec-91f3-ba4cf6b155e5" required>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+92-3XZ-YYYYYYY">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+      <!-- <u>
+        <h1 style="text-align: center;background-color: beige;"> Costumers Reviews</h1>
+      </u> -->
+      <div class="container">
+
+        <div class="row">
+          <h1 style="text-align: center"><u>Costumers Reviews</u> </h1>
+          <div class="col-md-8 course-details-content">
+            <div class="course-details-card mt--40">
+              <div class="course-content">
+                <!-- <h5 class="mb--20">Review</h5> -->
+                <div class="row row--30">
+                  <div class="col-lg-4">
+                    <div class="rating-box">
+                      <div class="rating-number">5.0</div>
+                      <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                          aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                          aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </div>
+                      <span>(25 Review)</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="review-wrapper">
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 5 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">23</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 4 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">3</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 3 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">2</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 2 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">3</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 1 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="0"
+                            aria-valuemin="80" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">2</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment-wrapper pt--40">
+
+                  <!--  Comment Box start--->
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='student-1.png')}}"
+                        alt="Comment Images"> </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Anam</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Outstanding Review Design ”</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='ah.jpg')}}" alt="Comment Images">
+                    </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Anam</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Outstanding Review Design ”</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='ALI.jpeg')}}" alt="Comment Images">
+                    </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Anam</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Outstanding Review Design ”</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <!-- Comment Box end--->
+                  <!--  Comment Box start--->
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='andrew.jpeg')}}"
+                        alt="Comment Images"> </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Momin</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Nice Review Design ”</span>
+                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
+                    </div>
+                  </div>
+                  <!--  Comment Box end--->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer style="color: #fff;">
+     
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    
+    
+     
+      <div style="color: #fff;">
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+     
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="" style="color: #fff;">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>MEDITRUST_PHARMACY
+            </h6>
+            <p style="color: #fff;">
+              MediTrust Pharma operates round the clock, ensuring that customers can access medications and healthcare
+              products anytime they need them.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset" ><b style="color: #fff;">AND ALTERNATIVES</b></a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset"style="color: #fff;" ><b style="color: #fff;">WELLNESS AND BEAUTY</b></a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset"><b style="color: #fff;">AND INJECTABLE</b></a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset"><b style="color: #fff;">FEATURED MEDICINES</b></a>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4" style="color: #fff;">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset"><b style="color: #fff;">JOB VACATION</b></a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset"><b style="color: #fff;">EMERGENCY_HELPLINE</b></a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset"><b style="color: #fff;">order</b></a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset"><b style="color: #fff;">HELP</b></a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4" style="color: #fff;">Contact</h6>
+            <p style="color: #fff;"><i class="fas fa-home me-3"></i> PAKISTAN, NY 10012, US</p>
+            <p style="color: #fff;">
+              <i class="fas fa-envelope me-3"></i>
+              MEDI@123online#
+            </p>
+            <p style="color: #fff;"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p style="color: #fff;"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(255, 255, 255, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold">MEDI_TRUST</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
+</html>

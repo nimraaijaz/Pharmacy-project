@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='new.css')}}">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"> </script> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+</head>
+<style>
+  *{
+    gap: 5px; 
+  }
+  /* body{
+    background-image: url(https://img.freepik.com/free-photo/medial-desk-with-clipboard_23-2148519744.jpg?t=st=1737099277~exp=1737102877~hmac=b89cd54bb31b9ea43be3b95108c2866493c8fe35dfea0511e79df023b6c3edb4&w=1100);
+  } */
+  .form-container {
+    max-width: 330px;
+        padding: 20px;
+        margin: auto; 
+        height: 250px;
+        max-height: 700px;
+    height: 40%;
+    background-color:aliceblue;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(187, 255, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #4d4d62;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #3b3bff;
+  }
+</style>
+
+<body>
+  <header>
+    <h1><b> MEDITRUST PHARMA </b></h1>
+    <p style="color: #fff;">Leading the way in innovative healthcare solutions</p>
+  </header>
+  <nav>
+    <a id="cart-button" href="/">Home</a>
+    <a id="cart-button" href="/about">About</a>
+    <a id="cart-button" href="/category">Catagories</a>
+    <a id="cart-button" href="/search">Discuss your problem</a>
+    <a id="cart-button" href="/feedback">FeedBack</a>
+    <a id="cart-button" href="/fill form">Complain</a>
+  <a id="cart-button" href="/forms">SIGN-UP</a>
+  <a id="cart-button" href="/loho">LOGIN</a>
+  </nav>
+  <section style="  background-image: url(https://img.freepik.com/free-photo/medial-desk-with-clipboard_23-2148519744.jpg?t=st=1737099277~exp=1737102877~hmac=b89cd54bb31b9ea43be3b95108c2866493c8fe35dfea0511e79df023b6c3edb4&w=1100);">
+    
+ 
+  <div class="form-container">
+
+    <h2><b>Get in Touch</b></h2>
+    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+    <form action="https://api.web3forms.com/submit" method="post">
+      <input type="hidden" name="access_key" value="e9490dd7-bdad-4aec-91f3-ba4cf6b155e5" required>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="+92-3XZ-YYYYYYY">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+<footer style="color: #fff;">
+     
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+  
+  
+   
+    <div style="color: #fff;">
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+   
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="" style="color: #fff;">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>MEDITRUST_PHARMACY
+          </h6>
+          <p style="color: #fff;">
+            MediTrust Pharma operates round the clock, ensuring that customers can access medications and healthcare
+            products anytime they need them.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset" ><b style="color: #fff;">AND ALTERNATIVES</b></a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"style="color: #fff;" ><b style="color: #fff;">WELLNESS AND BEAUTY</b></a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"><b style="color: #fff;">AND INJECTABLE</b></a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"><b style="color: #fff;">FEATURED MEDICINES</b></a>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4" style="color: #fff;">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset"><b style="color: #fff;">JOB VACATION</b></a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"><b style="color: #fff;">EMERGENCY_HELPLINE</b></a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"><b style="color: #fff;">order</b></a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"><b style="color: #fff;">HELP</b></a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4" style="color: #fff;">Contact</h6>
+          <p style="color: #fff;"><i class="fas fa-home me-3"></i> PAKISTAN 10012</p>
+          <p style="color: #fff;">
+            <i class="fas fa-envelope me-3"></i>
+            MEDI@123online#
+          </p>
+          <p style="color: #fff;"><i class="fas fa-phone me-3"></i> + 92 234 567 88</p>
+          <p style="color: #fff;"><i class="fas fa-print me-3"></i> + 92 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(255, 255, 255, 0.05);">
+    © 2024 Copyright:
+    <a class="text-reset fw-bold">MEDI_TRUST</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-
+
+
+</body>
+
+</html>

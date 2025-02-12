@@ -1,0 +1,265 @@
+body {
+    font-family: Arial, sans-serif;
+} 
+
+.pharmacy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.delivery-search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.delivery-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 15px;
+}
+
+.deliver-text {
+    font-size: 12px;
+    color: #666;
+}
+
+.location {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-button {
+    padding: 0;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-link,
+.upload-link {
+    margin-left: 15px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.cart {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart img {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-bar {
+    display: flex;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+.nav-item {
+    margin-right: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    background-color: white;
+}
+
+.search-bar-container:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.search-bar {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+}
+
+.search-button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+}
+.Dropdown button{
+    background-color: #f8f9fa;
+    color: #ddd;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown a{
+    display: block;
+    color: #666;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.dropdown .content{
+    display: none;
+    background-color: #ddd;
+    position: absolute;
+    min-width: 100px;
+    box-shadow:#ddd;
+}
+.dropdown:hover .content{
+    display: block;
+
+}
+.dropdown a:hover{
+    background-color:#666;
+
+}
+.review{
+    background: var(--bg-color);
+}
+.review-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.review .heading{
+    margin-bottom: 5rem;
+}
+.review-box img{
+    width: 15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+.review-item{
+    /* font-size: 62.5%; */
+    overflow-x: hidden;
+    /* --bg-color: #000000;
+    --second-bg-color: #111111; */
+    --text-color: #fff;
+    --main-color: #EE4B2B;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system, sans-serif;
+    min-height: 1000px;
+    max-width: 450px;
+    background: var(--second-bg-color);
+    border: 3px solid rgba(238, 238, 238, 0.3);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 30px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    color: #fff;
+    transition: 0.4s ease-in-out;
+}
+.review-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-5px) scale(1.03);
+}
+.review-item h2{
+    font-size: 2.8rem;
+}
+.review-item p{
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+#star{
+    color: gold;
+    font-size: 2rem;
+}
+

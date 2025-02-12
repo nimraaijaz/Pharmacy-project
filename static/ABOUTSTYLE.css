@@ -1,0 +1,472 @@
+*{
+    margin:0px;
+    padding:0px;
+    gap: 10px;
+    box-sizing:border-box;
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family:"Arial",sans-serif; */
+}
+.pharmacy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.delivery-search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.delivery-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 15px;
+}
+
+.deliver-text {
+    font-size: 12px;
+    color: #666;
+}
+
+.location {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-button {
+    padding: 0;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-link,
+.upload-link {
+    margin-left: 15px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.cart {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart img {
+    width: 18px;
+    height: 18px;
+}
+.nav-bar {
+    display: flex;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+.nav-item {
+    margin-right: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    background-color: white;
+}
+
+.search-bar-container:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.search-bar {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+}
+
+.search-button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+}
+.hero{
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+.heading{
+    color: teal;
+    font-size: 55px;
+    text-align:center;
+    margin-top:35px;
+}
+.container{
+    display: flex;
+    justify-content:center;
+    align-items: centre;
+    width: 90%;
+    margin: 65px auto;
+}
+.hero-content{
+    flex:1;
+    width:400px;
+    margin:0px 25px;
+}
+.hero-content h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.hero-content p{
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #666;
+}
+.hero-content button{
+    display: inline-block;
+    background-color: teal;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+
+.hero.image{
+    flex:1;
+    width:600px;
+    margin:auto;
+}
+ .hero {
+        background-image: url('aboutback.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 230vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.294);
+        text-align: center;
+        padding: 10px;
+    }
+    .categories-section{
+        background-color: #f8f8f8;
+        overflow: hidden;
+        margin-top: 50px; 
+        padding-top: 20px;
+    }
+    .categories-section h3{
+        font-size: 38px;
+        margin-bottom: 20px;
+        color: #333;
+
+    }
+
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .category-card {
+        background-color: white;
+        border: 1px solid #666;
+        border-radius: 8px;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(136, 134, 134, 0.1);
+        transition: transform 0.2s ease;
+    }
+    .category-card:hover {
+        transform: scale(1.05); 
+    }
+    .category-card h4{
+        background-color: white;
+        border: 1px solid #666;
+        border-radius: 8px;
+        text-align: center;
+        padding: 40px;
+        box-shadow: 0 2px 5px rgba(136, 134, 134, 0.1);
+        transition: transform 0.2s ease;
+    }
+  
+    .category-card img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+    }
+    .category-title {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+        position: static; 
+    }
+.medicines-of-pharmacy{
+    background-color: #f8f8f8;
+    overflow: hidden;
+    margin-top: 50px; 
+    padding-top: 20px;
+}
+.medicines-of-pharmacy h1{
+    background-color: #f8f8f8;
+    overflow: hidden;
+    margin-top: 50px; 
+    padding-top: 20px;
+    text-align: center;
+    color: teal;
+}
+.medicines-of-pharmacy h2{
+    background-color: #f8f8f8;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    margin-top: 10px; 
+    padding-top: 5px;
+}
+.medicine-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.medicine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.medicine-card {
+
+    gap: 40px;
+    background-color: #fff;
+    margin: 2px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.medicine-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.medicine-card h4 {
+    font-size: 16px;
+    /* margin: 10px 0; */
+}
+
+.medicine-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.medicine-card button.view-item {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.medicine-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.medicine-card:hover button.view-item {
+    opacity: 1;
+}
+.view-more {
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 40px;
+}
+
+.view-more button {
+    background-color: teal;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 50px;
+}
+.view-more button:hover {
+    transform: translateX(-10px);  
+    background-color: #006666;  
+}
+.how-we-work h1{
+    color: rgb(125, 191, 191);
+    font-size: 30px;
+    text-align: left;
+    margin-top: 50px;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+.how-we-work h2{
+    color: #333;
+    font-size: 29px;
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-left: 20px;
+
+}
+.how-we-work p{
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #666;  
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-left: 20px;
+}
+
+.heading h3{
+    color: #333;
+    font-size: 29px;
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-left: 20px;
+
+}
+.heading p{
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #666;  
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-left: 20px;
+}
+.headings h4{
+    color: #333;
+    font-size: 29px;
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-left: 20px;
+
+}
+.headings p{
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #666;  
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-left: 20px;
+}
+
+ 
+
+
+

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pharma</title>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='ABOUTSTYLE.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='review.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<style>
+*{
+  gap: 5px;;
+}
+  .medicines-of-pharmacy {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .medicines-of-pharmacy h1,
+  .medicines-of-pharmacy h2 {
+    margin: 10px 0;
+  }
+
+  .medicines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .medicine-card {
+   
+    /* border: 1px solid #ccc; */
+    /* border-radius: 8px; */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .medicine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .medicine-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .medicine-card h4 {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .medicine-card p {
+    margin: 8px 0;
+    color: #555;
+  }
+
+  .medicine-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+
+  .medicine-card button:hover {
+    background-color: #0056b3;
+  }
+  body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #e8f8f5, #ffffff);
+            /* color: #333; */
+        }
+        header {
+            background: linear-gradient(120deg, #4caf50, #087f23);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        }
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+        }
+        nav {
+            background: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #4caf50;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #087f23;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 350px;
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #4caf50;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #4caf50;
+            color: white;
+        }
+        .section {
+            padding: 60px 10%;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .section h3 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4caf50;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(120deg, #e8f8f5, #ffffff);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .feature h4 {
+            color: #087f23;
+            margin-bottom: 15px;
+        }
+        .testimonial {
+            background: #f9f9f9;
+            padding: 60px 10%;
+            margin: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial h3 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #4caf50;
+        }
+        .testimonial p {
+            font-size: 1.2em;
+            color: #c6bebe;
+            font-style: italic;
+        }
+        footer {
+            background: #087f23;
+            color: white;
+            text-align: center;
+            padding: 30px 10%;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+        }
+        footer a {
+            color: #ffeb3b;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+</style>
+<body>
+  <a href="/"></a>
+
+  <header>
+    <h1><b> MEDITRUST PHARMA </b></h1>
+    <p style="color: #f9f9f9;">Leading the way in innovative healthcare solutions</p>
+  </header>
+  <nav>
+    <a id="cart-button" href="/">Home</a>
+    <a id="cart-button" href="/about">About</a>
+    <a id="cart-button" href="/category">Categories</a>
+    <a id="cart-button" href="/search">Discuss your problem</a>
+    <a id="cart-button" href="/feedback">FeedBack</a>
+    <a id="cart-button" href="/fill form">Complain</a>
+  <a id="cart-button" href="/forms">SIGN-UP</a>
+  <a id="cart-button" href="/loho">LOGIN</a>
+  </nav>
+  <div class="modal" id="mymodal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Amazon give you varius variety !!</h4>
+          <button type="button" class="btn-close " data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKn-1bOBCiUkjW0mLb9QU6Bg4yMVTf_32wjw&s"
+            style="width: 100%; height: 100%;" srcset="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $("#mymodal").modal('show')
+
+      setTimeout(function () {
+        $("#mymodal").modal('hide')
+      }, 3000)
+    })
+  </script>
+  <!-- -----------------------------------slider------------------------------------ -->
+  <div id="carouselExampleCaptions" class="carousel slide" >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='banner_exclusive_medicine_featured.png')}}" width="1300px" height="500px">
+        <div class="carousel-caption d-none d-md-block">
+          <h5></h5>
+          <p></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img 
+          src="{{ url_for('static', filename='130221735-pharmacy-banner-set-flat-cartoon-online-drugstore-website-elements-with-different-drugs-and-pill.jpg') }}"
+          width="1300px" height="500px">
+        <div class="carousel-caption d-none d-md-block">
+          <!-- <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p> -->
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='COLOURBOX56650701.webp') }}" width="1300px" height="500px">
+        <div class="carousel-caption d-none d-md-block">
+          <!-- <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p> -->
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+    <section class="medicines-of-pharmacy" style=" background: linear-gradient(120deg, #e8f8f5, #ffffff);">
+      <h1 style=" background-color: #e8f8f5;" ><b> PHARMACY </b></h1>
+      <h2 style=" background-color: #e8f8f5">Wide Range of Medicines</h2>
+      <div class="medicines-grid" style=" background-color: #e8f8f5;" >
+        <div class="medicine-card" style=" background-color: #e8f8f5;" > 
+          <img src="{{ url_for('static', filename='panadol.jpeg') }}" alt="Medicine 1">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Panadol Extra 100mg</p> -->
+          <p>Rs. 118.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='arinac.jpeg')}}" alt="Medicine 2">
+          <h4>Arinac Forte (400/50mg) 100 Tablets</h4>
+          <p>Rs. 114.93</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='risek.jpeg')}}" alt="">
+          <h4> Risek Insta (20mg) 10 Sachets</h4>
+          <p>Rs. 21.3</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='rigix.jpeg')}}" alt="Medicine 4">
+          <h4> Rigix (10mg) 30 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='gluco.jpeg')}}" alt="Medicine 4">
+          <h4> Glucophage (500mg) 50 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='nurofen.jpeg')}}" alt="Medicine 5">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Nurofen 100mg</p> -->
+          <p>Rs. 318.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='panadol.jpeg')}}" alt="Medicine 1">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Panadol Extra 100mg</p> -->
+          <p>Rs. 118.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='arinac.jpeg')}}" alt="Medicine 2">
+          <h4>Arinac Forte (400/50mg) 100 Tablets</h4>
+          <p>Rs. 114.93</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='risek.jpeg')}}" alt="">
+          <h4> Risek Insta (20mg) 10 Sachets</h4>
+          <p>Rs. 21.3</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='rigix.jpeg')}}" alt="Medicine 4">
+          <h4> Rigix (10mg) 30 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card"style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='gluco.jpeg')}}" alt="Medicine 4">
+          <h4> Glucophage (500mg) 50 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='nurofen.jpeg')}}" alt="Medicine 5">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Nurofen 100mg</p> -->
+          <p>Rs. 318.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='panadol.jpeg')}}" alt="Medicine 1">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Panadol Extra 100mg</p> -->
+          <p>Rs. 118.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='arinac.jpeg')}}" alt="Medicine 2">
+          <h4>Arinac Forte (400/50mg) 100 Tablets</h4>
+          <p>Rs. 114.93</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='risek.jpeg')}}" alt="">
+          <h4> Risek Insta (20mg) 10 Sachets</h4>
+          <p>Rs. 21.3</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='rigix.jpeg')}}" alt="Medicine 4">
+          <h4> Rigix (10mg) 30 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='gluco.jpeg')}}" alt="Medicine 4">
+          <h4> Glucophage (500mg) 50 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='nurofen.jpeg')}}" alt="Medicine 5">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Nurofen 100mg</p> -->
+          <p>Rs. 318.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='panadol.jpeg')}}" alt="Medicine 1">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Panadol Extra 100mg</p> -->
+          <p>Rs. 118.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='arinac.jpeg')}}" alt="Medicine 2">
+          <h4>Arinac Forte (400/50mg) 100 Tablets</h4>
+          <p>Rs. 114.93</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='risek.jpeg')}}" alt="">
+          <h4> Risek Insta (20mg) 10 Sachets</h4>
+          <p>Rs. 21.3</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='rigix.jpeg')}}" alt="Medicine 4">
+          <h4> Rigix (10mg) 30 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='gluco.jpeg')}}" alt="Medicine 4">
+          <h4> Glucophage (500mg) 50 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button" >View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='nurofen.jpeg')}}" alt="Medicine 5">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Nurofen 100mg</p> -->
+          <p>Rs. 318.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='panadol.jpeg')}}" alt="Medicine 1">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Panadol Extra 100mg</p> -->
+          <p>Rs. 118.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card">
+          <img src="{{ url_for('static', filename='arinac.jpeg')}}" alt="Medicine 2">
+          <h4>Arinac Forte (400/50mg) 100 Tablets</h4>
+          <p>Rs. 114.93</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='risek.jpeg')}}" alt="">
+          <h4> Risek Insta (20mg) 10 Sachets</h4>
+          <p>Rs. 21.3</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='rigix.jpeg')}}" alt="Medicine 4">
+          <h4> Rigix (10mg) 30 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='gluco.jpeg')}}" alt="Medicine 4">
+          <h4> Glucophage (500mg) 50 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='nurofen.jpeg')}}" alt="Medicine 5">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Nurofen 100mg</p> -->
+          <p>Rs. 318.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='panadol.jpeg')}}" alt="Medicine 1">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Panadol Extra 100mg</p> -->
+          <p>Rs. 118.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='arinac.jpeg')}}" alt="Medicine 2">
+          <h4>Arinac Forte (400/50mg) 100 Tablets</h4>
+          <p>Rs. 114.93</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='risek.jpeg')}}" alt="">
+          <h4> Risek Insta (20mg) 10 Sachets</h4>
+          <p>Rs. 21.3</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='rigix.jpeg')}}" alt="Medicine 4">
+          <h4> Rigix (10mg) 30 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='gluco.jpeg')}}" alt="Medicine 4">
+          <h4> Glucophage (500mg) 50 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='nurofen.jpeg')}}" alt="Medicine 5">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Nurofen 100mg</p> -->
+          <p>Rs. 318.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='risek.jpeg')}}" alt="">
+          <h4> Risek Insta (20mg) 10 Sachets</h4>
+          <p>Rs. 21.3</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='rigix.jpeg')}}" alt="Medicine 4">
+          <h4> Rigix (10mg) 30 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='gluco.jpeg')}}" alt="Medicine 4">
+          <h4> Glucophage (500mg) 50 Tablets</h4>
+          <p>Rs. 148.5</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+        <div class="medicine-card" style=" background-color: #e8f8f5;">
+          <img src="{{ url_for('static', filename='nurofen.jpeg')}}" alt="Medicine 5">
+          <h4>Panadol (100mg) 30 Tablets</h4>
+          <!-- <p>Nurofen 100mg</p> -->
+          <p>Rs. 318.85</p>
+          <button class="view-item login-button">View Item</button>
+        </div>
+
+
+      </div>
+        <h1 style="text-align:center"><b> COSTUMER RATING</b></h1>
+      <div class="container" style=" background-color: #e8f8f5;">
+
+        <div class="row">
+          <div class="col-md-8 course-details-content">
+            <div class="course-details-card mt--40">
+              <div class="course-content">
+                <h5 class="mb--20"></h5>
+                <div class="row row--30">
+                  <div class="col-lg-4">
+                    <div class="rating-box">
+                      <div class="rating-number">5.0</div>
+                      <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                          aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                          aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </div>
+                      <span>(25 Review)</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="review-wrapper">
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 5 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">23</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 4 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">3</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 3 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">2</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 2 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">3</span>
+                      </div>
+                      <div class="single-progress-bar">
+                        <div class="rating-text"> 1 <i class="fa fa-star" aria-hidden="true"></i> </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="0"
+                            aria-valuemin="80" aria-valuemax="100"></div>
+                        </div>
+                        <span class="rating-value">2</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment-wrapper pt--40">
+                  <div class="section-title">
+                   
+                  </div>
+                  <!--  Comment Box start--->
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='student-1.png')}}" alt="Comment Images"> </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Anam</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Outstanding Review Design ”</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='student-1.png')}}" alt="Comment Images"> </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Anam</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Outstanding Review Design ”</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='student-1.png')}}" alt="Comment Images"> </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Anam</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Outstanding Review Design ”</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <!-- Comment Box end--->
+                  <!--  Comment Box start--->
+                  <div class="edu-comment">
+                    <div class="thumbnail"> <img src="{{ url_for('static', filename='student-1.png')}}" alt="Comment Images"> </div>
+                    <div class="comment-content">
+                      <div class="comment-top">
+                        <h6 class="title">Momin</h6>
+                        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                            aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </div>
+                      </div>
+                      <span class="subtitle">“ Nice Review Design ”</span>
+                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
+                    </div>
+                  </div>
+                  <!--  Comment Box end--->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Select all buttons with the class 'login-button'
+      const buttons = document.querySelectorAll(".login-button");
+
+      // Add click event listener to each button
+      buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+              alert("First login to perform this action.");
+          });
+      });
+  </script>
+    <!-- ----------------------------footer------------------------------------ -->
+    <!-- Footer -->
+    <footer style="color: #fff;">
+     
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      
+      
+       
+        <div style="color: #fff;">
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+       
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="" style="color: #fff;">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>MEDITRUST_PHARMACY
+              </h6>
+              <p style="color: #fff;">
+                MediTrust Pharma operates round the clock, ensuring that customers can access medications and healthcare
+                products anytime they need them.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Products
+              </h6>
+              <p>
+                <a href="#!" class="text-reset" ><b style="color: #fff;">AND ALTERNATIVES</b></a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset"style="color: #fff;" ><b style="color: #fff;">WELLNESS AND BEAUTY</b></a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset"><b style="color: #fff;">AND INJECTABLE</b></a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset"><b style="color: #fff;">FEATURED MEDICINES</b></a>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4" style="color: #fff;">
+                Useful links
+              </h6>
+              <p>
+                <a href="#!" class="text-reset"><b style="color: #fff;">JOB VACATION</b></a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset"><b style="color: #fff;">EMERGENCY_HELPLINE</b></a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset"><b style="color: #fff;">order</b></a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset"><b style="color: #fff;">HELP</b></a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4" style="color: #fff;">Contact</h6>
+              <p style="color: #fff;"><i class="fas fa-home me-3"></i> PAKISTAN, NY 10012, US</p>
+              <p style="color: #fff;">
+                <i class="fas fa-envelope me-3"></i>
+                MEDI@123online#
+              </p>
+              <p style="color: #fff;"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+              <p style="color: #fff;"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(255, 255, 255, 0.05);">
+        © 2024 Copyright:
+        <a class="text-reset fw-bold">MEDI_TRUST</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"crossorigin="anonymous"></script> -->
+</body>
+
+</html>

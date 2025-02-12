@@ -1,0 +1,205 @@
+
+*{
+  gap: 5px;;
+}
+  .medicines-of-pharmacy {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .medicines-of-pharmacy h1,
+  .medicines-of-pharmacy h2 {
+    margin: 10px 0;
+  }
+
+  .medicines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .medicine-card {
+   
+    /* border: 1px solid #ccc; */
+    /* border-radius: 8px; */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .medicine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .medicine-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .medicine-card h4 {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .medicine-card p {
+    margin: 8px 0;
+    color: #555;
+  }
+
+  .medicine-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+
+  .medicine-card button:hover {
+    background-color: #0056b3;
+  }
+  body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #e8f8f5, #ffffff);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(120deg, #4caf50, #087f23);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        }
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+        }
+        nav {
+            background: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #4caf50;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #087f23;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 350px;
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #4caf50;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #4caf50;
+            color: white;
+        }
+        .section {
+            padding: 60px 10%;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .section h3 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4caf50;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(120deg, #e8f8f5, #ffffff);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .feature h4 {
+            color: #087f23;
+            margin-bottom: 15px;
+        }
+        .testimonial {
+            background: #f9f9f9;
+            padding: 60px 10%;
+            margin: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial h3 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #4caf50;
+        }
+        .testimonial p {
+            font-size: 1.2em;
+            color: #c6bebe;
+            font-style: italic;
+        }
+        footer {
+            background: #087f23;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 30px 10%;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+        }
+        footer a {
+            color: #ffeb3b;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+

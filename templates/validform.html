@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='validstyle.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='new.css')}}">
+</head>
+<style>
+    *{
+      gap:1px
+    }
+  </style>
+<body  style=" background-color: #e8f8f5;">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username === "abdur" && password === "abdur123") {
+                window.location.href = "profile.html?username=" + username;
+            } else {
+                alert("Invalid Password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

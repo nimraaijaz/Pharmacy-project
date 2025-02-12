@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+      <meta charset="utf-8">
+      <title>cards</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='maincard.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='new.css')}}">
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> 
+</head>
+<style>
+  *{
+    gap:1px
+  }
+</style>
+
+<body >
+  <header>
+    <h1><b> MEDITRUST PHARMA </b></h1>
+    <p>Leading the way in innovative healthcare solutions</p>
+  </header>
+  <nav>
+    <a id="cart-button" href="/">Home</a>
+    <a id="cart-button" href="/about">About</a>
+    <a id="cart-button" href="/category">Catagories</a>
+    <a id="cart-button" href="/search">Discuss your problem</a>
+    <a id="cart-button" href="/feedback">FeedBack</a>
+    <a id="cart-button" href="/fill form">Complain</a>
+  <a id="cart-button" href="/forms">SIGN-UP</a>
+  <a id="cart-button" href="/loho">LOGIN</a>
+  </nav>
+        <div class="slider owl-carousel">
+                <div class="card" style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='Screenshot_2023-06-09_102351-removebg-preview.png')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Vaseline Intensive Care Deep Restore 100ml Lotion
+                      </div>
+                      <div class="sub-title">
+                        VASELINE LOTION
+                      </div>
+                      <p>
+                        Rs. 2793.8
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+       
+                   </div>
+                </div>
+                <div class="card"style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='870190.webp')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Rose Petal Maxob (Large) 
+                        <div> Tissue Roll</div>
+                      </div>
+                      <div class="sub-title">
+                        TISSUE ROLL
+                      </div>
+                      <p>
+                        Rs. 2764.5
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="card"style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='f.png')}}"alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Mortein (Flying Insect Killer) 300ml Spray
+                      </div>
+                      <div class="sub-title">
+                        INSECT KILLER
+                      </div>
+                      <p>
+                        Rs. 480.0
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="slider owl-carousel">
+                <div class="card"style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='Screenshot_2023-06-02_181114.png')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Marhaba Ispaghol 95g Husk
+                      </div>
+                      <div class="sub-title">
+                       ISPAGHOL
+                      </div>
+                      <p>
+                        Rs. 912.0
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+       
+                   </div>
+                </div>
+                <div class="card"style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='DETTOL_SOL_50ML__1.webp')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Dettol 50ml Antiseptic Liquid
+                      </div>
+                      <div class="sub-title">
+                        DETTOL GERMS KILLER
+                      </div>
+                      <p>
+                        Rs. 175.5
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="card" style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='PARACHUTE_100ML_OIL__1.webp')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Parachute 100ml Coconut Oil
+                      </div>
+                      <div class="sub-title">
+                        HAIR OIL
+                      </div>
+                      <p>
+                        Rs. 251.96
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+             </div> <div class="slider owl-carousel">
+                <div class="card" style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='870190.webp')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Rose Petal (Perfumed) 200 Ply Tissues
+                      </div>
+                      <div class="sub-title">
+                        PERFUMED TISSUES
+                      </div>
+                      <p>
+                        Rs. 332.5
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+       
+                   </div>
+                </div>
+                <div class="card" style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='TIBET_COLD_CREAM_S__1.webp')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Tibet Cold 40ml Cream
+                      </div>
+                      <div class="sub-title">
+                        TIBET COLD CREAM
+                      </div>
+                      <p>
+                        Rs. 1406.0
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="card" style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='Screenshot_2023-06-02_181114.png')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Marhaba Ispaghol 95g Husk
+                       
+                      </div>
+                      <div class="sub-title">
+                       ISPHAGOL
+                      </div>
+                      <p>
+                        Rs. 123.5
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="slider owl-carousel">
+                <div class="card" style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='Screenshot_2023-10-13_184006-removebg-preview.png')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        Kingtox (Flying Insect Killer) 300ml 
+                      </div>
+                      <div class="sub-title">
+                        KINGTOX                      </div>
+                      <p>
+                        Rs. 3136.38
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+       
+                   </div>
+                </div>
+                <div class="card" style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='Marhaba_Ispaghol_50g_Husk_1257_copy.png')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                       MARHABA ISPHAGOL 
+                      </div>
+                      <div class="sub-title">
+                        ISPHAGOL
+                      </div>
+                      <p>
+                        Rs. 2085.7
+                      </p>
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="card"style=" background-color: #e8f8f5;">
+                   <div class="img">
+                      <img src="{{ url_for('static', filename='Screenshot_2023-06-07_105036-removebg-preview.png')}}" alt="">
+                   </div>
+                   <div class="content">
+                      <div class="title">
+                        JUMBO SPRITE DRINK
+                      </div>
+                      <div class="sub-title">
+                        SPRITE
+                      </div>
+                      <p>
+                        Rs. 2376.5
+                      </p>  
+                      <div class="container">
+                       <div class="btn" >
+                         <button class="view-item login-button">Buy Now</button>
+                      </div>
+                      <div class="btn" >
+                         <button class="view-item login-button">Add to cart</button>
+                       </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+        <script>
+           const buttons = document.querySelectorAll(".login-button");
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            alert("First login to perform this action.");
+        });
+    });
+                $(".slider").owlCarousel({
+                  loop: true,
+                  autoplay: true,
+                  autoplayTimeout: 2000,
+                  autoplayHoverPause: true,
+                });
+        </script> 
+        <footer >
+          <!-- Section: Social media -->
+          <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            
+            <!-- Right -->
+            <div>
+              <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <!-- Right -->
+          </section>
+          <!-- Section: Social media -->
+        
+          <!-- Section: Links  -->
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    <i class="fas fa-gem me-3"></i>MEDITRUST_PHARMACY
+                  </h6>
+                  <p>
+                      MediTrust Pharma operates round the clock, ensuring that customers can access medications and healthcare products anytime they need them.
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Products
+                  </h6>
+                  <p>
+                    <a href="#!" class="text-reset"><b>AND ALTERNATIVES</b></a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset"><b>WELLNESS AND BEAUTY</b></a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset"><b>AND INJECTABLE</b></a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset"><b>FEATURED MEDICINES</b></a>
+                   
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Useful links
+                  </h6>
+                  <p>
+                    <a href="#!" class="text-reset"><b>JOB VACATION</b></a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset"><b>EMERGENCY_HELPLINE</b></a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset"><b>order</b></a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset"><b>HELP</b></a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                  <p><i class="fas fa-home me-3"></i> PAKISTAN, NY 10012, US</p>
+                  <p>
+                    <i class="fas fa-envelope me-3"></i>
+                   MEDI@123online#
+                  </p>
+                  <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                  <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+          <!-- Section: Links  -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MEDI_TRUST</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      
+      
+      
+      
+      
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+          
+  </body>
+</html>
